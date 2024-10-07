@@ -93,7 +93,7 @@ export function CartSheet({ button }: { button: JSX.Element }) {
                   />
                 </div>
                 <div className="flex flex-col gap-2 text-sm">
-                  <h3 className="w-20 md:w-52">Ground Nuts Oil Pack</h3>
+                  <h3 className="w-full md:w-52">Ground Nuts Oil Pack</h3>
                   <div className="flex gap-2 items-center">
                     <span className="font-bold text-base">$15 </span>
                     <span className="font-light ">x 500 g</span>
@@ -117,7 +117,7 @@ export function CartSheet({ button }: { button: JSX.Element }) {
                   />
                 </div>
                 <div className="flex flex-col gap-2 text-sm">
-                  <h3 className="w-20 md:w-52">Ground Nuts Oil Pack</h3>
+                  <h3 className="w-full md:w-52">Ground Nuts Oil Pack</h3>
                   <div className="flex gap-2 items-center">
                     <span className="font-bold text-base">$15 </span>
                     <span className="font-light ">x 500 g</span>
@@ -141,7 +141,7 @@ export function CartSheet({ button }: { button: JSX.Element }) {
                   />
                 </div>
                 <div className="flex flex-col gap-2 text-sm">
-                  <h3 className="w-20 md:w-52">Ground Nuts Oil Pack</h3>
+                  <h3 className="w-full md:w-52">Ground Nuts Oil Pack</h3>
                   <div className="flex gap-2 items-center">
                     <span className="font-bold text-base">$15 </span>
                     <span className="font-light ">x 500 g</span>
@@ -166,7 +166,7 @@ export function CartSheet({ button }: { button: JSX.Element }) {
                   />
                 </div>
                 <div className="flex flex-col gap-2 text-sm">
-                  <h3 className="w-20 md:w-52">Ground Nuts Oil Pack</h3>
+                  <h3 className="w-full md:w-52">Ground Nuts Oil Pack</h3>
                   <div className="flex gap-2 items-center">
                     <span className="font-bold text-base">$15 </span>
                     <span className="font-light ">x 500 g</span>
@@ -190,7 +190,7 @@ export function CartSheet({ button }: { button: JSX.Element }) {
                   />
                 </div>
                 <div className="flex flex-col gap-2 text-sm">
-                  <h3 className="w-20 md:w-52">Ground Nuts Oil Pack</h3>
+                  <h3 className="w-full md:w-52">Ground Nuts Oil Pack</h3>
                   <div className="flex gap-2 items-center">
                     <span className="font-bold text-base">$15 </span>
                     <span className="font-light ">x 500 g</span>

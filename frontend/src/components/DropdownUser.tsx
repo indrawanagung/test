@@ -17,9 +17,9 @@ const DropdownUser = () => {
           </h3>
         </div>
   
-        <div className="group-hover:flex hidden absolute top-10 bg-white text-sm text-gray-500 tracking-wider w-max py-5 shadow-lg rounded-lg z-10 pl-4 pr-20 -left-4 flex-col gap-4 items-start animate-in fade-in-0 duration-400">
+        <div className="group-hover:flex hidden font-normal absolute top-10 bg-white  text-gray-500 tracking-wider w-max py-5 shadow-lg rounded-lg z-10 pl-4 pr-20 -left-4 flex-col gap-4 items-start animate-in fade-in-0 duration-400">
           <Link href="/register" className="hover:text-teal-500">Register</Link>
-          <span className="hover:text-teal-500">Checkout</span>
+          <Link href="/checkout" className="hover:text-teal-500">Checkout</Link>
           <Link href="/login" className="hover:text-teal-500">Login</Link>
         </div>
     

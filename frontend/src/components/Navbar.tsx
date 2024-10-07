@@ -15,7 +15,6 @@ import RightMenuNavbar from "./Mobile/RightMenuNavbar";
 import DropdownProducts from "./DropdownMenu";
 import DropdownUser from "./DropdownUser";
 import { CartSheet } from "./Cart/CartSheet";
-import { useOnClickOutside } from "./hooks/use-on-click-outside";
 import Link from "next/link";
 
 const Navbar = () => {

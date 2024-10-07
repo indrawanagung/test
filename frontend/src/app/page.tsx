@@ -29,8 +29,6 @@ export default function Home() {
             <div className="flex gap-4 my-10 overflow-scroll scrollbar-hide pb-5">
               <div
                 data-aos="fade-up"
-                data-aos-delay="200"
-                data-aos-offset="300"
                 className="flex flex-col max-w-60 min-w-60 gap-2 cursor-pointer border rounded-xl border-gray-200 shadow-md"
               >
                 <Image
@@ -54,8 +52,6 @@ export default function Home() {
               </div>
               <div
                 data-aos="fade-up"
-                data-aos-delay="200"
-                data-aos-offset="300"
                 className="flex flex-col max-w-60 min-w-60 gap-2 cursor-pointer border rounded-xl border-gray-200 shadow-md"
               >
                 <Image
@@ -79,8 +75,6 @@ export default function Home() {
               </div>
               <div
                 data-aos="fade-up"
-                data-aos-delay="200"
-                data-aos-offset="300"
                 className="flex flex-col max-w-60 min-w-60 gap-2 cursor-pointer border rounded-xl border-gray-200 shadow-md"
               >
                 <Image
@@ -110,7 +104,6 @@ export default function Home() {
             <div className="flex flex-col gap-8 lg:flex-row justify-center">
               <div
                 data-aos="fade-up"
-                data-aos-delay="300"
                 className="md:min-w-64 flex justify-center  gap-8 py-8 px-5 rounded-3xl bg-orange-100"
               >
                 <div className="flex justify-center">
@@ -138,7 +131,6 @@ export default function Home() {
               </div>
               <div
                 data-aos="fade-up"
-                data-aos-delay="300"
                 className="md:min-w-64 flex justify-center gap-8 py-8 px-5 rounded-3xl bg-rose-100 "
               >
                 <div className="flex justify-center">
@@ -170,9 +162,7 @@ export default function Home() {
         <div className="w-full h-[20rem] md:h-[25rem] lg:h-[30rem] xl:h-[35rem] relative mt-10">
           <Image src="/farmer4.jpg" alt="" fill className="object-cover" />
           <AnimationWrapper>
-            <div
-              className="bottom-0 translate-y-1/2 right-1/2 md:right-1/4 translate-x-1/2 z-50 bg-white shadow-lg flex flex-col gap-3 lg:gap-5 absolute py-8 px-12 lg:px-16 rounded-3xl"
-            >
+            <div className="bottom-0 translate-y-1/2 right-1/2 md:right-1/4 translate-x-1/2 z-50 bg-white shadow-lg flex flex-col gap-3 lg:gap-5 absolute py-8 px-12 lg:px-16 rounded-3xl">
               <span className="text-xl text-purple-500 tracking-wider font-semibold">
                 25% Off
               </span>
@@ -288,8 +278,6 @@ export default function Home() {
               <div className="flex lg:flex-wrap justify-center gap-6 mt-16">
                 <div
                   data-aos="flip-up"
-                  data-aos-delay="200"
-                  data-aos-offset="300"
                   className="flex flex-col gap-1 border border-gray-200 py-8 px-4 rounded-2xl"
                 >
                   <div className="flex flex-col gap-2 justify-center items-center">
@@ -310,8 +298,6 @@ export default function Home() {
                 </div>
                 <div
                   data-aos="flip-up"
-                  data-aos-delay="200"
-                  data-aos-offset="300"
                   className="flex flex-col gap-1 border border-gray-200 py-8 px-4 rounded-2xl"
                 >
                   <div className="flex flex-col gap-2 justify-center items-center">
@@ -332,8 +318,6 @@ export default function Home() {
                 </div>
                 <div
                   data-aos="flip-up"
-                  data-aos-delay="200"
-                  data-aos-offset="300"
                   className="flex flex-col gap-1 border border-gray-200 py-8 px-4 rounded-2xl"
                 >
                   <div className="flex flex-col gap-2 justify-center items-center">
@@ -354,8 +338,6 @@ export default function Home() {
                 </div>
                 <div
                   data-aos="flip-up"
-                  data-aos-delay="200"
-                  data-aos-offset="300"
                   className="flex flex-col gap-1 border border-gray-200 py-8 px-4 rounded-2xl"
                 >
                   <div className="flex flex-col gap-2 justify-center items-center">
