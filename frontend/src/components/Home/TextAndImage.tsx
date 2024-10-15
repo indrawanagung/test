@@ -5,7 +5,7 @@ import AOS from "aos";
 const TextAndImage = () => {
   useEffect(() => {
     AOS.init({
-      duration: 2000, // Durasi animasi dalam milidetik
+      duration: 1000, // Durasi animasi dalam milidetik
     });
   }, []);
   return (
@@ -25,7 +25,6 @@ const TextAndImage = () => {
         <div className="lg:w-[50%] flex flex-col justify-center items-center lg:items-start gap-3 pt-2 pb-10">
           <p className="text-gray-500 text-xl font-extralight">Flat 30% Off</p>
           <p
-            data-aos="flip-right"
             className="text-5xl lg:text-7xl font-extrabold text-gray-700 tracking-wide text-center lg:text-start"
           >
             Explore <span className="text-purple-600">Healthy</span> & Fresh
