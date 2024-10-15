@@ -56,6 +56,11 @@ CREATE TABLE public.weight_units (
                                      unit_name varchar NOT NULL,
                                      CONSTRAINT productweight_pk PRIMARY KEY (id)
 );
+CREATE TABLE public.product_categories (
+                                           id varchar NOT NULL,
+                                           category_name varchar NOT NULL,
+                                           CONSTRAINT product_category_pk PRIMARY KEY (id)
+);
 CREATE TABLE public.products (
                                  id varchar NOT NULL,
                                  "name" varchar NOT NULL,
@@ -96,8 +101,3 @@ CREATE TABLE public.product_stocks (
                                        CONSTRAINT productstocks_fk FOREIGN KEY (product_id) REFERENCES public.products(id)
 );
 
-CREATE TABLE public.product_categories (
-                                           id varchar NOT NULL,
-                                           category_name varchar NOT NULL,
-                                           CONSTRAINT product_category_pk PRIMARY KEY (id)
-);

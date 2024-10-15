@@ -6,6 +6,7 @@ import (
 	"github.com/gofiber/fiber/v2/middleware/logger"
 	"grabit/controllers"
 	"grabit/db"
+	"grabit/repository"
 	"grabit/routes"
 	"grabit/util"
 	"os"
@@ -22,9 +23,10 @@ func main() {
 
 	database := db.OpenConnection(config.DBSource)
 
-	contentController := controllers.NewContentController(database, validate)
+	userRepository := repository.NewUserRepository()
+	authController := controllers.NewAuthController(database, validate, userRepository)
 
-	app := routes.New(contentController)
+	app := routes.New(authController)
 	app.Static("/api/v1/images", "./public/images")
 	app.Use(logger.New(logger.Config{
 		Format:     "${cyan}[${time}] ${white}${pid} ${red}${status} ${blue}[${method}] ${white}${path}\n",

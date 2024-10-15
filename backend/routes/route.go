@@ -8,14 +8,15 @@ import (
 	"grabit/exceptions"
 )
 
-func New(contentController controllers.ContentControllerInterface) *fiber.App {
+func New(authController controllers.AuthControllerInterface) *fiber.App {
 	app := fiber.New(fiber.Config{ErrorHandler: exceptions.ErrorHandler})
 	app.Use(cors.New())
 	app.Use(recover.New())
 	api := app.Group("/api")
 	v1 := api.Group("/v1")
 
-	v1.Get("/berita", contentController.FindAll)
+	v1.Post("/auth/login", authController.Login)
+	v1.Post("/auth/register", authController.Register)
 
 	// Error Handler
 
