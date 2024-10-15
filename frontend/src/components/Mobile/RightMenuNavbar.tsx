@@ -1,18 +1,13 @@
 import Image from "next/image";
-import React, { useState } from "react";
+import React from "react";
 import RightMenuNavbarSheet from "./RightMenuNavbarSheet";
 import {
   Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
   SheetTrigger,
 } from "../ui/sheet";
 import { CartSheet } from "../Cart/CartSheet";
 
 const RightMenuNavbar = () => {
-  const [openMenu, setOpenMenu] = useState(false);
   return (
     <>
       <div className="self-center items-center flex xl:hidden gap-4 text-blue-500 font-light">

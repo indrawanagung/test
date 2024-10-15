@@ -2,15 +2,9 @@ import {
   Sheet,
   SheetClose,
   SheetContent,
-  SheetDescription,
-  SheetFooter,
-  SheetHeader,
   SheetOverlay,
-  SheetPortal,
-  SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { ShoppingCartSimple } from "@phosphor-icons/react/dist/ssr";
 import Image from "next/image";
 
 export function CartSheet({ button }: { button: JSX.Element }) {

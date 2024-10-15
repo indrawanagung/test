@@ -21,7 +21,7 @@ export default function Home() {
               Day Of The <span className="text-purple-500">Deal</span>
             </h2>
             <span className="text-lg text-gray-500">
-              Don't wait. The time will never be just right
+              Dont wait. The time will never be just right
             </span>
           </div>
           {/* LIST PRODUCT  */}
@@ -67,7 +67,7 @@ export default function Home() {
                   </span>
                   <h4>Mixed Fruit Cocholates Organic Apple</h4>
                   {/* PRICE  */}
-                  <div className="flex justify-between">
+                  <div className="flex justify-between px-4 absolute bottom-2 w-full left-0 ">
                     <span className="font-extrabold">$25</span>
                     <span>1 Pack</span>
                   </div>
@@ -90,7 +90,30 @@ export default function Home() {
                   </span>
                   <h4>Mixed Fruit Cocholates Organic Apple</h4>
                   {/* PRICE  */}
-                  <div className="flex justify-between">
+                  <div className="flex justify-between px-4 absolute bottom-2 w-full left-0 ">
+                    <span className="font-extrabold">$25</span>
+                    <span>1 Pack</span>
+                  </div>
+                </div>
+              </div>
+              <div
+                data-aos="fade-up"
+                className="flex flex-col max-w-60 min-w-60 gap-2 cursor-pointer border rounded-xl border-gray-200 shadow-md"
+              >
+                <Image
+                  src="/product4.jpg"
+                  alt=""
+                  className="w-fit hover:p-1 duration-300 h-50 p-5 border-b"
+                  width={200}
+                  height={200}
+                />
+                <div className="flex flex-col gap-2 py-2 px-4 justify-end">
+                  <span className="text-sm font-light tracking-wider text-gray-500">
+                    Chocos
+                  </span>
+                  <h4>Just Juice Strowberry </h4>
+                  {/* PRICE  */}
+                  <div className="flex justify-between px-4 absolute bottom-2 w-full left-0 ">
                     <span className="font-extrabold">$25</span>
                     <span>1 Pack</span>
                   </div>
@@ -275,7 +298,7 @@ export default function Home() {
 
             {/* FEATURES  */}
             <AnimationWrapper className="w-full">
-              <div className="flex lg:flex-wrap justify-center gap-6 mt-16">
+              <div className="flex overflow-x-auto scrollbar-hide justify-center gap-6 mt-16">
                 <div
                   data-aos="flip-up"
                   className="flex flex-col gap-1 border border-gray-200 py-8 px-4 rounded-2xl"

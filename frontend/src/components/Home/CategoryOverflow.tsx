@@ -12,11 +12,9 @@ const CategoryOverflow = () => {
   return (
     <>
       <div className="scrollbar-hide overflow-scroll mb-10 ">
-        <div className="flex gap-5 mb-5 lg:justify-center">
+        <div className="flex gap-6 mb-5 lg:justify-center">
           <div
-            data-aos="flip-left"
-            data-aos-offset="400"
-            className="bg-orange-100 h-36 min-w-max py-3 px-20 rounded-xl flex flex-col gap-1 justify-center items-center"
+            className="bg-green-100 h-36 min-w-max py-3 px-20 rounded-xl flex flex-col gap-1 justify-center items-center"
           >
             {/* IMAGE  */}
             <Image
@@ -27,82 +25,59 @@ const CategoryOverflow = () => {
               className="w-12 h-12"
             />
             {/* CATEGORY  */}
-            <h3 className="text-lg">Fruits</h3>
+            <h3 className="text-lg font-medium tracking-widest">Fruits</h3>
             {/* TOTAL ITEMS  */}
             <span className="text-gray-500">4 Items</span>
           </div>
           <div
-            data-aos="flip-left"
-            data-aos-offset="400"
-            className="bg-orange-100 h-36 min-w-max py-3 px-20 rounded-xl flex flex-col gap-1 justify-center items-center"
+            className="bg-yellow-100 h-36 min-w-max py-3 px-20 rounded-xl flex flex-col gap-1 justify-center items-center"
           >
             {/* IMAGE  */}
             <Image
-              src="/jeruk.svg"
+              src="/bakery.svg"
               alt=""
               width={100}
               height={100}
               className="w-12 h-12"
             />
             {/* CATEGORY  */}
-            <h3 className="text-lg">Fruits</h3>
+            <h3 className="text-lg font-medium tracking-widest">Bakery</h3>
             {/* TOTAL ITEMS  */}
             <span className="text-gray-500">4 Items</span>
           </div>
           <div
-            data-aos="flip-left"
-            data-aos-offset="400"
-            className="bg-orange-100 h-36 min-w-max py-3 px-20 rounded-xl flex flex-col gap-1 justify-center items-center"
+            className="bg-purple-100 h-36 min-w-max py-2 px-20 rounded-xl flex flex-col gap-1 justify-center items-center"
           >
             {/* IMAGE  */}
             <Image
-              src="/jeruk.svg"
+              src="/drink.svg"
               alt=""
               width={100}
               height={100}
               className="w-12 h-12"
             />
             {/* CATEGORY  */}
-            <h3 className="text-lg">Fruits</h3>
+            <h3 className="text-lg font-medium tracking-widest">Cold Drink</h3>
             {/* TOTAL ITEMS  */}
             <span className="text-gray-500">4 Items</span>
           </div>
           <div
-            data-aos="flip-left"
-            data-aos-offset="400"
-            className="bg-orange-100 h-36 min-w-max py-3 px-20 rounded-xl flex flex-col gap-1 justify-center items-center"
+            className="bg-rose-100 h-36 min-w-max py-3 px-20 rounded-xl flex flex-col gap-1 justify-center items-center"
           >
             {/* IMAGE  */}
             <Image
-              src="/jeruk.svg"
+              src="/vegetable.svg"
               alt=""
               width={100}
               height={100}
               className="w-12 h-12"
             />
             {/* CATEGORY  */}
-            <h3 className="text-lg">Fruits</h3>
+            <h3 className="text-lg font-medium tracking-widest">Vegatable</h3>
             {/* TOTAL ITEMS  */}
             <span className="text-gray-500">4 Items</span>
           </div>
-          <div
-            data-aos="flip-left"
-            data-aos-offset="400"
-            className="bg-orange-100 h-36 min-w-max py-3 px-20 rounded-xl flex flex-col gap-1 justify-center items-center"
-          >
-            {/* IMAGE  */}
-            <Image
-              src="/jeruk.svg"
-              alt=""
-              width={100}
-              height={100}
-              className="w-12 h-12"
-            />
-            {/* CATEGORY  */}
-            <h3 className="text-lg">Fruits</h3>
-            {/* TOTAL ITEMS  */}
-            <span className="text-gray-500">4 Items</span>
-          </div>
+         
         </div>
       </div>
     </>

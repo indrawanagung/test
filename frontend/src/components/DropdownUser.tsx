@@ -1,6 +1,5 @@
-import { CaretDown, User } from "@phosphor-icons/react/dist/ssr";
-import React, { useRef, useState } from "react";
-import { useOnClickOutside } from "./hooks/use-on-click-outside";
+import { User } from "@phosphor-icons/react/dist/ssr";
+import React from "react";
 import Link from "next/link";
 
 const DropdownUser = () => {

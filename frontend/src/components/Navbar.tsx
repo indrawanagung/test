@@ -1,15 +1,13 @@
 "use client";
 import {
-  CaretDown,
   MagnifyingGlass,
   ShoppingCartSimple,
   SquaresFour,
   Star,
-  User,
 } from "@phosphor-icons/react/dist/ssr";
 import MaxWidthWrapper from "./MaxWidthWrapper";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import DropdownCategorySearch from "./DropdownCategorySearch";
 import RightMenuNavbar from "./Mobile/RightMenuNavbar";
 import DropdownProducts from "./DropdownMenu";

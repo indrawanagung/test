@@ -11,7 +11,7 @@ const AnimationWrapper = ({
 }) => {
   useEffect(() => {
     AOS.init({
-      duration: 2000, // Durasi animasi dalam milidetik
+      duration:2000, // Durasi animasi dalam milidetik
     });
   }, []);
   return <div className={cn(className)}>{children}</div>;
