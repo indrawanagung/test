@@ -5,7 +5,7 @@ import AOS from "aos";
 const TextAndImage = () => {
   useEffect(() => {
     AOS.init({
-      duration: 1000, // Durasi animasi dalam milidetik
+      duration: 100, // Durasi animasi dalam milidetik
     });
   }, []);
   return (
