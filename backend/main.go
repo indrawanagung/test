@@ -8,7 +8,6 @@ import (
 	"grabit/db"
 	"grabit/repository"
 	"grabit/routes"
-	"grabit/util"
 	"os"
 )
 
@@ -16,18 +15,17 @@ func main() {
 
 	validate := validator.New()
 
-	config, err := util.LoadConfig(".")
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	database := db.OpenConnection(config.DBSource)
+	database := db.OpenConnection()
 
 	userRepository := repository.NewUserRepository()
-	authController := controllers.NewAuthController(database, validate, userRepository)
+	productRepository := repository.NewProductRepository()
 
-	app := routes.New(authController)
+	authController := controllers.NewAuthController(database, validate, userRepository)
+	productController := controllers.NewProductController(database, validate, productRepository)
+
+	app := routes.New(authController, productController)
 	app.Static("/api/v1/images", "./public/images")
+
 	app.Use(logger.New(logger.Config{
 		Format:     "${cyan}[${time}] ${white}${pid} ${red}${status} ${blue}[${method}] ${white}${path}\n",
 		TimeFormat: "02-Jan-2006",

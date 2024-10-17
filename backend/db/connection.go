@@ -5,11 +5,15 @@ import (
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
+	"grabit/util"
 )
 
-func OpenConnection(config string) *gorm.DB {
-	dsn := config
-	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{
+func OpenConnection() *gorm.DB {
+	config, err := util.LoadConfig(".")
+	if err != nil {
+		log.Fatal(err)
+	}
+	db, err := gorm.Open(postgres.Open(config.DBSource), &gorm.Config{
 		Logger: logger.Default.LogMode(logger.Info),
 	})
 	if err != nil {

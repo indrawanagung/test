@@ -1,11 +1,9 @@
 package repository
 
 import (
-	"errors"
-	"fmt"
 	"github.com/gofiber/fiber/v2/log"
 	"gorm.io/gorm"
-	"grabit/model/web"
+	"grabit/model/domain"
 )
 
 type ProductRepositoryImpl struct {
@@ -15,31 +13,26 @@ func NewProductRepository() ProductRepositoryInterface {
 	return &ProductRepositoryImpl{}
 }
 
-func (p ProductRepositoryImpl) FindAll(tx *gorm.DB) []web.ProductResponse {
-	var productResponses []web.ProductResponse
-	err := tx.Table("products p").Select("p.id, p.name, p.product_category_id, pv.width, pv.length, pv.height").
-		Joins("join product_volumes pv on pv.product_id = p.id").
-		Scan(&productResponses).Error
+func (p ProductRepositoryImpl) FindAll(tx *gorm.DB) []domain.Product {
+	var product []domain.Product
+	err := tx.Joins("ProductCategory").Find(&product).Error
 	if err != nil {
 		log.Error(err)
 		panic(err)
 	}
-	return productResponses
+	return product
 }
 
-func (p ProductRepositoryImpl) FindByID(tx *gorm.DB, id string) (web.ProductResponse, error) {
-	var productResponse web.ProductResponse
-	err := tx.Table("products p").Select("p.id, p.name, p.product_category_id, pv.width, pv.length, pv.height").
-		Joins("join product_volumes pv on pv.product_id = p.id").
-		Where("p.id = ?", id).
-		Scan(&productResponse).Error
+func (p ProductRepositoryImpl) FindByID(tx *gorm.DB, id string) (domain.Product, error) {
+	var product domain.Product
+	err := tx.Preload("VariationOptions").
+		Preload("VariationOptions.ProductStock").
+		Preload("VariationOptions.ProductVolume.WeightUnit").
+		Where("products.id = ?", id).
+		First(&product).Error
 	if err != nil {
 		log.Error(err)
 		panic(err)
 	}
-
-	if productResponse == (web.ProductResponse{}) {
-		return productResponse, errors.New(fmt.Sprintf("product id %s is not found", id))
-	}
-	return productResponse, nil
+	return product, nil
 }
