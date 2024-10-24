@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { loginUser } from "@/lib/fetcher/auth";
 import Cookies from 'js-cookie';
+import Link from "next/link";
 
 const page = () => {
   const [email, setEmail] = useState<string>("");
@@ -72,9 +73,9 @@ const page = () => {
                 >
                   Login
                 </button>
-                <button className="text-purple-500 rounded-xl px-5 py-2 hover:text-black">
+                <Link href="/register" className="text-purple-500 rounded-xl px-5 py-2 hover:text-black">
                   Register
-                </button>
+                </Link>
               </div>
             </div>
           </form>
