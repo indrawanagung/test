@@ -13,3 +13,12 @@ type ProductResponse struct {
 	Height            int    `json:"height"`
 	Length            int    `json:"length"`
 }
+
+type AddProductCartRequest struct {
+	VariationOptionID string `validate:"required"`
+	Qty               int    `validate:"required"`
+}
+
+type CheckoutRequest struct {
+	PaymentTYpeID string `validate:"required"`
+}

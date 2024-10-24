@@ -71,6 +71,7 @@ CREATE TABLE public.products (
                                  created_at varchar NOT NULL,
                                  updated_at varchar NULL,
                                  deleted_at timestamp NULL,
+                                 description text NULL,
                                  CONSTRAINT products_pk PRIMARY KEY (id),
                                  CONSTRAINT products_productcategory_fk FOREIGN KEY (product_category_id) REFERENCES public.product_categories(id),
                                  CONSTRAINT products_status_fk FOREIGN KEY (status_id) REFERENCES public.status(id)

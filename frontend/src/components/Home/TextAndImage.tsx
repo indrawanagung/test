@@ -2,6 +2,7 @@
 import Image from "next/image";
 import React, { useEffect } from "react";
 import AOS from "aos";
+import Link from "next/link";
 const TextAndImage = () => {
   useEffect(() => {
     AOS.init({
@@ -30,12 +31,12 @@ const TextAndImage = () => {
             Explore <span className="text-purple-600">Healthy</span> & Fresh
             Fruits
           </p>
-          <button
+          <Link href="/products"
             data-aos="fade-up-right"
             className="border mt-3 border-gray-500 text-gray-600 px-3 py-2 rounded-lg"
           >
             Shop Now
-          </button>
+          </Link>
         </div>
       </div>
     </>

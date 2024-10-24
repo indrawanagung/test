@@ -1,14 +1,21 @@
 package routes
 
 import (
+	"grabit/controllers"
+	"grabit/exceptions"
+
+	jwtware "github.com/gofiber/contrib/jwt"
+	"github.com/spf13/viper"
+
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/cors"
 	"github.com/gofiber/fiber/v2/middleware/recover"
-	"grabit/controllers"
-	"grabit/exceptions"
 )
 
 func New(authController controllers.AuthControllerInterface, productController controllers.ProductControllerInterface) *fiber.App {
+	authentication := jwtware.New(jwtware.Config{
+		SigningKey: jwtware.SigningKey{Key: []byte(viper.GetString("SECRET_KEY"))},
+	})
 	app := fiber.New(fiber.Config{ErrorHandler: exceptions.ErrorHandler})
 	app.Use(cors.New())
 	app.Use(recover.New())
@@ -20,6 +27,16 @@ func New(authController controllers.AuthControllerInterface, productController c
 
 	v1.Get("/products", productController.FindAll)
 	v1.Get("/products/:id", productController.FindByID)
+
+	v1.Post("/carts", authentication, productController.AddProductCart)
+	v1.Get("/carts", authentication, productController.FindAllProductCart)
+	v1.Delete("/carts/:id", authentication, productController.DeleteProductCart)
+
+	v1.Post("/checkout", authentication, productController.Checkout)
+
+	v1.Get("/payment_types", authentication, productController.FindAllPaymentType)
+
+	v1.Get("/orders", authentication, productController.FindAllOrder)
 
 	// Error Handler
 

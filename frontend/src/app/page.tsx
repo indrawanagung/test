@@ -3,6 +3,8 @@ import Image from "next/image";
 import TextAndImage from "@/components/Home/TextAndImage";
 import CategoryOverflow from "@/components/Home/CategoryOverflow";
 import AnimationWrapper from "@/components/AnimationWrapper";
+import ListProducts from "@/components/Products";
+import Link from "next/link";
 export default function Home() {
   return (
     <div className="mb-28">
@@ -27,98 +29,7 @@ export default function Home() {
           {/* LIST PRODUCT  */}
           <AnimationWrapper>
             <div className="flex gap-4 my-10 overflow-scroll scrollbar-hide pb-5">
-              <div
-                data-aos="fade-up"
-                className="flex flex-col max-w-60 min-w-60 gap-2 cursor-pointer border rounded-xl border-gray-200 shadow-md"
-              >
-                <Image
-                  src="/product1.jpg"
-                  alt=""
-                  className="w-fit hover:p-1 duration-300 h-50 p-5 border-b"
-                  width={200}
-                  height={200}
-                />
-                <div className="flex flex-col gap-2 py-2 px-4">
-                  <span className="text-sm font-light tracking-wider text-gray-500">
-                    Chocos
-                  </span>
-                  <h4>Mixed Fruit Cocholates Organic Apple</h4>
-                  {/* PRICE  */}
-                  <div className="flex justify-between">
-                    <span className="font-extrabold">$25</span>
-                    <span>1 Pack</span>
-                  </div>
-                </div>
-              </div>
-              <div
-                data-aos="fade-up"
-                className="flex flex-col max-w-60 min-w-60 gap-2 cursor-pointer border rounded-xl border-gray-200 shadow-md"
-              >
-                <Image
-                  src="/product2.jpg"
-                  alt=""
-                  className="w-fit hover:p-1 duration-300 h-50 p-5 border-b"
-                  width={200}
-                  height={200}
-                />
-                <div className="flex flex-col gap-2 py-2 px-4">
-                  <span className="text-sm font-light tracking-wider text-gray-500">
-                    Chocos
-                  </span>
-                  <h4>Mixed Fruit Cocholates Organic Apple</h4>
-                  {/* PRICE  */}
-                  <div className="flex justify-between px-4 absolute bottom-2 w-full left-0 ">
-                    <span className="font-extrabold">$25</span>
-                    <span>1 Pack</span>
-                  </div>
-                </div>
-              </div>
-              <div
-                data-aos="fade-up"
-                className="flex flex-col max-w-60 min-w-60 gap-2 cursor-pointer border rounded-xl border-gray-200 shadow-md"
-              >
-                <Image
-                  src="/product3.jpg"
-                  alt=""
-                  className="w-fit hover:p-1 duration-300 h-50 p-5 border-b"
-                  width={200}
-                  height={200}
-                />
-                <div className="flex flex-col gap-2 py-2 px-4">
-                  <span className="text-sm font-light tracking-wider text-gray-500">
-                    Chocos
-                  </span>
-                  <h4>Mixed Fruit Cocholates Organic Apple</h4>
-                  {/* PRICE  */}
-                  <div className="flex justify-between px-4 absolute bottom-2 w-full left-0 ">
-                    <span className="font-extrabold">$25</span>
-                    <span>1 Pack</span>
-                  </div>
-                </div>
-              </div>
-              <div
-                data-aos="fade-up"
-                className="flex flex-col max-w-60 min-w-60 gap-2 cursor-pointer border rounded-xl border-gray-200 shadow-md"
-              >
-                <Image
-                  src="/product4.jpg"
-                  alt=""
-                  className="w-fit hover:p-1 duration-300 h-50 p-5 border-b"
-                  width={200}
-                  height={200}
-                />
-                <div className="flex flex-col gap-2 py-2 px-4 justify-end">
-                  <span className="text-sm font-light tracking-wider text-gray-500">
-                    Chocos
-                  </span>
-                  <h4>Just Juice Strowberry </h4>
-                  {/* PRICE  */}
-                  <div className="flex justify-between px-4 absolute bottom-2 w-full left-0 ">
-                    <span className="font-extrabold">$25</span>
-                    <span>1 Pack</span>
-                  </div>
-                </div>
-              </div>
+             <ListProducts />
             </div>
           </AnimationWrapper>
 
@@ -192,9 +103,9 @@ export default function Home() {
               <h3 className="text-4xl lg:text-5xl font-semibold tracking-wider w-60 lg:w-80">
                 Fresh & Organic Vegetables
               </h3>
-              <button className="px-2 py-1 border border-black w-32 rounded-lg mt-2 hover:px-4 hover:py-3 duration-200">
+              <Link href="/products" className="px-2 py-1 border border-black w-32 rounded-lg mt-2 hover:px-4 hover:py-3 duration-200">
                 Shop Now
-              </button>
+              </Link>
             </div>
           </AnimationWrapper>
         </div>
@@ -222,78 +133,9 @@ export default function Home() {
             </div>
 
             {/* LIST PRODUCT  */}
-            <AnimationWrapper>
-              <div
-                data-aos="fade-up"
-                className="flex gap-4 my-10 overflow-scroll scrollbar-hide pb-5"
-              >
-                <div className="flex flex-col max-w-60 min-w-60 gap-2 cursor-pointer border rounded-xl border-gray-200 shadow-md">
-                  <Image
-                    src="/product1.jpg"
-                    alt=""
-                    className="w-fit hover:p-1 duration-300 h-50 p-5 border-b"
-                    width={200}
-                    height={200}
-                  />
-                  <div className="flex flex-col gap-2 py-2 px-4">
-                    <span className="text-sm font-light tracking-wider text-gray-500">
-                      Chocos
-                    </span>
-                    <h4>Mixed Fruit Cocholates Organic Apple</h4>
-                    {/* PRICE  */}
-                    <div className="flex justify-between">
-                      <span className="font-extrabold">$25</span>
-                      <span>1 Pack</span>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  data-aos="fade-up"
-                  className="flex flex-col max-w-60 min-w-60 gap-2 cursor-pointer border rounded-xl border-gray-200 shadow-md"
-                >
-                  <Image
-                    src="/product2.jpg"
-                    alt=""
-                    className="w-fit hover:p-1 duration-300 h-50 p-5 border-b"
-                    width={200}
-                    height={200}
-                  />
-                  <div className="flex flex-col gap-2 py-2 px-4">
-                    <span className="text-sm font-light tracking-wider text-gray-500">
-                      Chocos
-                    </span>
-                    <h4>Mixed Fruit Cocholates Organic Apple</h4>
-                    {/* PRICE  */}
-                    <div className="flex justify-between">
-                      <span className="font-extrabold">$25</span>
-                      <span>1 Pack</span>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  data-aos="fade-up"
-                  className="flex flex-col max-w-60 min-w-60 gap-2 cursor-pointer border rounded-xl border-gray-200 shadow-md"
-                >
-                  <Image
-                    src="/product3.jpg"
-                    alt=""
-                    className="w-fit hover:p-1 duration-300 h-50 p-5 border-b"
-                    width={200}
-                    height={200}
-                  />
-                  <div className="flex flex-col gap-2 py-2 px-4">
-                    <span className="text-sm font-light tracking-wider text-gray-500">
-                      Chocos
-                    </span>
-                    <h4>Mixed Fruit Cocholates Organic Apple</h4>
-                    {/* PRICE  */}
-                    <div className="flex justify-between">
-                      <span className="font-extrabold">$25</span>
-                      <span>1 Pack</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <AnimationWrapper className="mt-10">
+            <ListProducts />
+
             </AnimationWrapper>
 
             {/* FEATURES  */}

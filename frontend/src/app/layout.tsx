@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { Fredoka } from "@next/font/google";
 import Footer from "@/components/Footer";
+import { Toaster } from "@/components/ui/sonner"
 
 // const geistSans = localFont({
 //   src: "./fonts/GeistVF.woff",
@@ -40,6 +41,7 @@ export default function RootLayout({
         </div>
        
         <Footer />
+        <Toaster richColors position="top-center"/>
       </body>
     </html>
   );
