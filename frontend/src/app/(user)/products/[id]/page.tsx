@@ -1,12 +1,17 @@
 "use client";
 import FilterMenu from "@/components/Filter";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
-import { addProductCart, addProductCartRequest, getProduct, ProductDetail } from "@/lib/fetcher/product";
+import {
+  addProductCart,
+  addProductCartRequest,
+  getProduct,
+  ProductDetail,
+} from "@/lib/fetcher/product";
 import { HeartStraight } from "@phosphor-icons/react/dist/ssr";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import Cookies from 'js-cookie';
-import { toast } from 'sonner'
+import Cookies from "js-cookie";
+import { toast } from "sonner";
 import { toRupiah } from "@/lib/utils";
 
 interface ProductPageProps {
@@ -16,13 +21,12 @@ interface ProductPageProps {
 }
 
 interface productCart {
-  product : ProductDetail,
-  stock : number
+  product: ProductDetail;
+  stock: number;
 }
 
-
 const page = ({ params }: ProductPageProps) => {
-  const token = Cookies.get('token')
+  const token = Cookies.get("token");
   const { id } = params;
   const [product, setProduct] = useState<ProductDetail>();
   const [options, setOptions] = useState<string[]>([]);
@@ -37,31 +41,30 @@ const page = ({ params }: ProductPageProps) => {
     setOptions(response.data.VariationOptions.map((v) => v.OptionName));
   };
 
-  const changeStock = (action : 'Increase' | 'Decrease') => {
-      if(action == 'Increase') {
-        setStock(stock + 1)
+  const changeStock = (action: "Increase" | "Decrease") => {
+    if (action == "Increase") {
+      setStock(stock + 1);
+    }
+    if (action == "Decrease") {
+      if (stock - 1 != 0) {
+        setStock(stock - 1);
       }
-      if(action == 'Decrease') {
-        if(stock - 1 != 0) {
-          setStock(stock - 1)
-        }
-      }
-  }
+    }
+  };
 
   const addToCart = async () => {
-    const request : addProductCartRequest = {
-      VariationOptionID : product?.VariationOptions[optionChoose].ID!,
-      Qty : stock,
-    }
-    const response= await addProductCart(request ,token!)
-    if(response.header.error) {
-      toast.error(response.header.message)
-    }else {
+    const request: addProductCartRequest = {
+      VariationOptionID: product?.VariationOptions[optionChoose].ID!,
+      Qty: stock,
+    };
+    const response = await addProductCart(request, token!);
+    if (response.header.error) {
+      toast.error(response.header.message);
+    } else {
       // window.location.reload()
-      toast.success("Produk telah berhasil ditambahkan")
+      toast.success("Produk telah berhasil ditambahkan");
     }
-    
-  }
+  };
   useEffect(() => {
     fetchProduct();
   }, []);
@@ -75,7 +78,10 @@ const page = ({ params }: ProductPageProps) => {
           {/* LIST PRODUCT  */}
           <div className="flex flex-col lg:flex-row gap-5">
             <Image
-              src={`${process.env.NEXT_PUBLIC_API_BASE_URL}/images` + product?.Image}
+              src={
+                `${process.env.NEXT_PUBLIC_API_BASE_URL}/images` +
+                product?.Image
+              }
               alt=""
               height={500}
               width={500}
@@ -131,16 +137,29 @@ const page = ({ params }: ProductPageProps) => {
               </div>
               <div className="flex gap-4">
                 <div className="flex gap-2 justify-center items-center text-xl border border-gray-200 py-2 px-3 rounded-xl">
-                  <button onClick={()=> changeStock('Decrease')} className="text-xl">-</button>
+                  <button
+                    onClick={() => changeStock("Decrease")}
+                    className="text-xl"
+                  >
+                    -
+                  </button>
                   <input
                     type="text"
                     className="w-10 text-base text-center outline-none"
                     defaultValue={1}
                     value={stock}
                   />
-                  <button onClick={()=> changeStock('Increase')} className="text-xl">+</button>
+                  <button
+                    onClick={() => changeStock("Increase")}
+                    className="text-xl"
+                  >
+                    +
+                  </button>
                 </div>
-                <button onClick={addToCart}  className="text-white bg-purple-500 px-7 py-2 rounded-xl">
+                <button
+                  onClick={addToCart}
+                  className="text-white bg-purple-500 px-7 py-2 rounded-xl"
+                >
                   Add To Cart
                 </button>
                 <button className="border border-gray-200 px-2 py-1 rounded-xl">

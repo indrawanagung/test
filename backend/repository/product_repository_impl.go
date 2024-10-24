@@ -15,13 +15,18 @@ func NewProductRepository() ProductRepositoryInterface {
 }
 
 func (p ProductRepositoryImpl) FindAll(tx *gorm.DB) []domain.Product {
-	var product []domain.Product
-	err := tx.Joins("ProductCategory").Find(&product).Error
+	var products []domain.Product
+	err := tx.Preload("VariationOptions").
+		Joins("ProductCategory").
+		Preload("VariationOptions.ProductStock").
+		Preload("VariationOptions.Variation").
+		Preload("VariationOptions.ProductVolume.WeightUnit").
+		Find(&products).Error
 	if err != nil {
 		log.Error(err)
 		panic(err)
 	}
-	return product
+	return products
 }
 
 func (p ProductRepositoryImpl) FindByID(tx *gorm.DB, id string) (domain.Product, error) {
@@ -120,7 +125,7 @@ func (p ProductRepositoryImpl) FindAllOrder(tx *gorm.DB, userID string) []domain
 		Joins("Address.City").
 		Joins("Payment.PaymentType").
 		Joins("Status").
-		Order("orders.id desc").
+		Order("orders.created_at desc").
 		Find(&orders, "orders.user_id = ?", userID).Error
 	if err != nil {
 		log.Error(err)

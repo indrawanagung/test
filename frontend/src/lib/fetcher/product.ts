@@ -9,7 +9,7 @@ export interface Product {
   Price: number;
   Image: string;
   ProductCategory: ProductCategory;
-  VariationOptions: any;
+  VariationOptions: VariationOption[]
   created_at: string;
   updated_at: string;
   deleted_at: any;

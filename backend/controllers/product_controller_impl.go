@@ -141,7 +141,7 @@ func (c ProductControllerImpl) Checkout(ctx *fiber.Ctx) error {
 		PaymentTypeID: req.PaymentTYpeID,
 		AccountNumber: util.GetUnixTimestamp(),
 		ExpiryDate:    util.GetUnixTimestamp(),
-		StatusID:      "1",
+		StatusID:      "5",
 		Timestamp: domain.Timestamp{
 			CreatedAt: util.GetUnixTimestamp(),
 			UpdatedAt: util.GetUnixTimestamp(),
@@ -155,7 +155,7 @@ func (c ProductControllerImpl) Checkout(ctx *fiber.Ctx) error {
 		AddressID:  "1",
 		TotalPrice: totalPrice,
 		PaymentID:  payment.ID,
-		StatusID:   "1",
+		StatusID:   "5",
 		Timestamp: domain.Timestamp{
 			CreatedAt: util.GetUnixTimestamp(),
 			UpdatedAt: util.GetUnixTimestamp(),

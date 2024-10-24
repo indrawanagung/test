@@ -134,7 +134,9 @@ export default function Home() {
 
             {/* LIST PRODUCT  */}
             <AnimationWrapper className="mt-10">
-            <ListProducts />
+            <div className="flex gap-4 my-10 overflow-scroll scrollbar-hide pb-5">
+             <ListProducts />
+            </div>
 
             </AnimationWrapper>
 
