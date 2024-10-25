@@ -70,13 +70,13 @@ const page = ({ params }: ProductPageProps) => {
   }, []);
   return (
     <>
-      <MaxWidthWrapper className="h-screen">
+      <MaxWidthWrapper className="min-h-screen mb-10">
         <div className="flex flex-col lg:flex-row gap-5 p-2">
           {/* CATEGORY  */}
           <FilterMenu />
 
           {/* LIST PRODUCT  */}
-          <div className="flex flex-col lg:flex-row gap-5">
+          <div className="flex flex-col items-center lg:flex-row gap-5">
             <Image
               src={
                 `${process.env.NEXT_PUBLIC_API_BASE_URL}/images` +

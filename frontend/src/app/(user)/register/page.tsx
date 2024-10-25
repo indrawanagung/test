@@ -4,6 +4,7 @@ import React from "react";
 import { useRouter } from "next/navigation";
 import { RegisterRequest, registerUser } from "@/lib/fetcher/auth";
 import { request } from "http";
+import { toast } from "sonner"
 
 const page = () => {
   const router = useRouter();
@@ -21,10 +22,11 @@ const page = () => {
     }
     const response = await registerUser(request);
     if (!response.header.error) {
+      toast.success("user has been created successfully")
       // Jika berhasil, arahkan ke halaman yang dilindungi
       router.push("/login");
     } else {
-     
+      toast.error(response.header.message)
     }
   };
   return (

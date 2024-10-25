@@ -78,7 +78,7 @@ const page = () => {
                   </div>
                   <div className="flex justify-between">
                     <span className="tracking-wider  ">Status</span>
-                    <span className="font-bold text-purple-500 ">{order.Status.Name.toLocaleLowerCase()}</span>
+                    <span className="font-bold text-purple-500 ">{order.Status.Name}</span>
                   </div>
                 </div>
                 <hr />
