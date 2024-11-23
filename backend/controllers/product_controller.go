@@ -11,4 +11,8 @@ type ProductControllerInterface interface {
 	Checkout(ctx *fiber.Ctx) error
 	FindAllPaymentType(ctx *fiber.Ctx) error
 	FindAllOrder(ctx *fiber.Ctx) error
+
+	//ADMIN
+	AdminFindAllProduct(ctx *fiber.Ctx) error
+	AdminCreateProduct(ctx *fiber.Ctx) error
 }

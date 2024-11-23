@@ -29,7 +29,7 @@ const Navbar = () => {
           <div className="relative flex flex-col md:flex-row gap-4 w-full justify-between">
             {/* LOGO  */}
             <div className="flex justify-between gap-4 items-center">
-              <Image src="/logo.png" alt="" width={110} height={100} />
+              <Image src="/logo.png" alt="" width={130} height={180} />
               <SquaresFour
                 size={25}
                 className="text-gray-500 lg:hidden ring-[1px] ring-gray-300 rounded-lg p-[2px]"

@@ -22,3 +22,20 @@ type AddProductCartRequest struct {
 type CheckoutRequest struct {
 	PaymentTYpeID string `validate:"required"`
 }
+
+type AdminVariationProductRequest struct {
+	OptionName  string `json:"OptionName"`
+	VariationID string `json:"VariationID"`
+	Description string `json:"Description"`
+	Width       int    `json:"Width"`
+	Height      int    `json:"Height"`
+	Length      int    `json:"Length"`
+	Stock       int    `json:"Stock"`
+	Price       int64  `json:"Price"`
+}
+
+type CreateAdminProductRequest struct {
+	ProductName       string                         `validate:"required" json:"ProductName"`
+	ProductCategoryID string                         `validate:"required" json:"ProductCategoryID"`
+	VariationOptions  []AdminVariationProductRequest `json:"VariationOptions"`
+}

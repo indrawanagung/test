@@ -38,7 +38,10 @@ func New(authController controllers.AuthControllerInterface, productController c
 
 	v1.Get("/orders", authentication, productController.FindAllOrder)
 
-	// Error Handler
+	// Administrator
+	admin := v1.Group("/admin")
+	admin.Get("/products", productController.AdminFindAllProduct)
+	admin.Post("/products", productController.AdminCreateProduct)
 
 	return app
 }

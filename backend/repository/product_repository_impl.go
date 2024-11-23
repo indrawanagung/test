@@ -133,3 +133,26 @@ func (p ProductRepositoryImpl) FindAllOrder(tx *gorm.DB, userID string) []domain
 	}
 	return orders
 }
+
+func (p ProductRepositoryImpl) AdminFindAllProduct(tx *gorm.DB) []domain.Product {
+	var products []domain.Product
+	err := tx.Preload("VariationOptions").
+		Joins("ProductCategory").
+		Preload("VariationOptions.ProductStock").
+		Preload("VariationOptions.Variation").
+		Preload("VariationOptions.ProductVolume.WeightUnit").
+		Find(&products).Error
+	if err != nil {
+		log.Error(err)
+		panic(err)
+	}
+	return products
+}
+
+func (p ProductRepositoryImpl) AdminCreateProduct(tx *gorm.DB, product domain.Product) {
+	err := tx.Save(&product).Error
+	if err != nil {
+		log.Error(err)
+		panic(err)
+	}
+}

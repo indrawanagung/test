@@ -26,4 +26,8 @@ type ProductRepositoryInterface interface {
 
 	//order
 	FindAllOrder(tx *gorm.DB, userID string) []domain.Order
+
+	//Admin
+	AdminFindAllProduct(tx *gorm.DB) []domain.Product
+	AdminCreateProduct(tx *gorm.DB, product domain.Product)
 }
