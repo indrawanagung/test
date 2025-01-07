@@ -32,7 +32,7 @@ export class ProductAPI {
   ): Promise<CreateProductResponse> => {
     // Request to the external login API
     const response = await axios.post(
-      "http://localhost:5000/api/v1/admin/products",
+     `${process.env.NEXT_PUBLIC_API_BASE_URL}/admin/products`,
       formData,
       {
         headers: {
