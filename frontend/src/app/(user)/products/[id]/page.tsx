@@ -25,7 +25,7 @@ interface productCart {
   stock: number;
 }
 
-const page = ({ params }: ProductPageProps) => {
+const ProductDetailPage = ({ params }: ProductPageProps) => {
   const token = Cookies.get("token");
   const { id } = params;
   const [product, setProduct] = useState<ProductDetail>();
@@ -174,4 +174,4 @@ const page = ({ params }: ProductPageProps) => {
   );
 };
 
-export default page;
+export default ProductDetailPage;

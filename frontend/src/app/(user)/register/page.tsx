@@ -5,8 +5,9 @@ import { useRouter } from "next/navigation";
 import { RegisterRequest, registerUser } from "@/lib/fetcher/auth";
 import { request } from "http";
 import { toast } from "sonner"
+import { UserAPI } from "@/lib/fetcher/user/user";
 
-const page = () => {
+const RegisterPage = () => {
   const router = useRouter();
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -20,7 +21,7 @@ const page = () => {
         phone_number : form.phone.value,
         password : form.password.value
     }
-    const response = await registerUser(request);
+    const response = await UserAPI.RegisterUser(request)
     if (!response.header.error) {
       toast.success("user has been created successfully")
       // Jika berhasil, arahkan ke halaman yang dilindungi
@@ -134,4 +135,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default RegisterPage

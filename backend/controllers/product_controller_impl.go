@@ -29,8 +29,9 @@ func NewProductController(Database *gorm.DB, Validate *validator.Validate, Produ
 	return &ProductControllerImpl{Database: Database, Validate: Validate, ProductRepository: ProductRepository}
 }
 
-func (c ProductControllerImpl) FindAll(ctx *fiber.Ctx) error {
-	response := c.ProductRepository.FindAll(c.Database)
+func (c ProductControllerImpl) FindAllProductVariations(ctx *fiber.Ctx) error {
+	name := ctx.Query("name", "")
+	response := c.ProductRepository.FindAllProductVariation(c.Database, name)
 	webResponse := web.WebResponse{
 		Header: util.HeaderResponseSuccessfully(),
 		Data:   response,
@@ -290,6 +291,7 @@ func (c ProductControllerImpl) AdminCreateProduct(ctx *fiber.Ctx) error {
 	productID := util.GenerateUUID()
 
 	var variations []domain.VariationOption
+
 	for _, variation := range productCreateRequest.VariationOptions {
 		variationProductID := util.GenerateUUID()
 		variationOption := domain.VariationOption{

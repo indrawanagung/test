@@ -153,7 +153,7 @@ export function CartSheet({ button }: { button: JSX.Element }) {
               </div>
 
               {cartProducts?.map((product) => (
-                <div className="flex gap-6 bg-slate-100 p-7 rounded-2xl">
+                <div key={product.ID} className="flex gap-6 shadow-lg p-7 rounded-2xl">
                   <div className="bg-white shadow-lg px-2 h-fit py-5 md:py-0 md:px-0 rounded-2xl flex items-center justify-center">
                     <Image
                       src={
@@ -161,7 +161,7 @@ export function CartSheet({ button }: { button: JSX.Element }) {
                         product.VariationOption.Product.Image
                       }
                       alt=""
-                      className="w-14 h-12 md:w-24 md:h-24"
+                      className="w-14 h-12 md:w-24 md:h-24 rounded-xl"
                       width={100}
                       height={100}
                     />

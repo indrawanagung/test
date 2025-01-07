@@ -6,8 +6,9 @@ import { useRouter } from "next/navigation";
 import { loginUser } from "@/lib/fetcher/auth";
 import Cookies from 'js-cookie';
 import Link from "next/link";
+import { UserAPI } from "@/lib/fetcher/user/user";
 
-const page = () => {
+const LoginPage = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [error, setError] = useState<string | null>(null);
@@ -16,7 +17,7 @@ const page = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const response = await loginUser(email, password)
+    const response = await UserAPI.LoginUser(email, password)
 
     if (!response.header.error) {
       // Jika berhasil, arahkan ke halaman yang dilindungi
@@ -85,4 +86,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default LoginPage

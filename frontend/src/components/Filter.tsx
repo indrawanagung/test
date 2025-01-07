@@ -1,104 +1,61 @@
 import React from "react";
+import { Checkbox } from "@/components/ui/checkbox"
+import { Label } from "@/components/ui/label"
 
-const FilterMenu = () => {
+export default function FilterMenu() {
   return (
-    <div className="bg-slate-100 w-full lg:w-[30%] rounded-3xl p-6 flex flex-col gap-8">
-      <div className="flex flex-col gap-3">
-        <span className="text-xl tracking-wide text-gray-700">Category</span>
-        <div className="flex flex-col gap-2 tracking-wide">
-          <div className="flex items-center">
-            <input
-              id="default-checkbox"
-              type="checkbox"
-              value=""
-              className="w-4 h-4 text-blue-600 bg-black rounded-full"
-            />
-            <label
-              htmlFor="default-checkbox"
-              className="ms-2 text-sm font-medium text-gray-500 dark:text-gray-300"
-            >
-              Clothes
-            </label>
-          </div>
-          <div className="flex items-center">
-            <input
-              id="default-checkbox"
-              type="checkbox"
-              value=""
-              className="w-4 h-4 text-blue-600 bg-black rounded-full "
-            />
-            <label
-              htmlFor="default-checkbox"
-              className="ms-2 text-sm font-medium text-gray-500 dark:text-gray-300"
-            >
-              Bags
-            </label>
-          </div>
-          <div className="flex items-center">
-            <input
-              id="default-checkbox"
-              type="checkbox"
-              value=""
-              className="w-4 h-4 text-blue-600 bg-black rounded-full "
-            />
-            <label
-              htmlFor="default-checkbox"
-              className="ms-2 text-sm font-medium text-gray-500 dark:text-gray-300"
-            >
-              Shoes
-            </label>
-          </div>
-          <div className="flex items-center">
-            <input
-              id="default-checkbox"
-              type="checkbox"
-              value=""
-              className="w-4 h-4 text-blue-600 bg-black rounded-full "
-            />
-            <label
-              htmlFor="default-checkbox"
-              className="ms-2 text-sm font-medium text-gray-500 dark:text-gray-300"
-            >
-              Cosmetics
-            </label>
+    <div className="w-64 bg-slate-50 p-6 rounded-lg">
+      <div className="space-y-6">
+        {/* Category Section */}
+        <div className="space-y-4">
+          <h2 className="text-base font-medium text-slate-900">Category</h2>
+          <div className="space-y-3">
+            <div className="flex items-center space-x-2">
+              <Checkbox id="clothes" />
+              <Label htmlFor="clothes" className="text-sm text-slate-600">
+                Clothes
+              </Label>
+            </div>
+            <div className="flex items-center space-x-2">
+              <Checkbox id="bags" />
+              <Label htmlFor="bags" className="text-sm text-slate-600">
+                Bags
+              </Label>
+            </div>
+            <div className="flex items-center space-x-2">
+              <Checkbox id="shoes" />
+              <Label htmlFor="shoes" className="text-sm text-slate-600">
+                Shoes
+              </Label>
+            </div>
+            <div className="flex items-center space-x-2">
+              <Checkbox id="cosmetics" />
+              <Label htmlFor="cosmetics" className="text-sm text-slate-600">
+                Cosmetics
+              </Label>
+            </div>
           </div>
         </div>
-      </div>
-      <div className="flex flex-col gap-3">
-        <span className="text-xl tracking-wide text-gray-700">Weight</span>
-        <div className="flex flex-col gap-2 tracking-wide">
-          <div className="flex items-center">
-            <input
-              id="default-checkbox"
-              type="checkbox"
-              value=""
-              className="w-4 h-4 text-blue-600 bg-black rounded-full "
-            />
-            <label
-              htmlFor="default-checkbox"
-              className="ms-2 text-sm font-medium text-gray-500 dark:text-gray-300 w-full"
-            >
-              200gm Packs
-            </label>
-          </div>
-          <div className="flex items-center">
-            <input
-              id="default-checkbox"
-              type="checkbox"
-              value=""
-              className="w-4 h-4 text-blue-600 bg-black rounded-full "
-            />
-            <label
-              htmlFor="default-checkbox"
-              className="ms-2 text-sm font-medium text-gray-500 dark:text-gray-300"
-            >
-              500gm Packs
-            </label>
+
+        {/* Weight Section */}
+        <div className="space-y-4">
+          <h2 className="text-base font-medium text-slate-900">Weight</h2>
+          <div className="space-y-3">
+            <div className="flex items-center space-x-2">
+              <Checkbox id="200gm" />
+              <Label htmlFor="200gm" className="text-sm text-slate-600">
+                200gm Packs
+              </Label>
+            </div>
+            <div className="flex items-center space-x-2">
+              <Checkbox id="500gm" />
+              <Label htmlFor="500gm" className="text-sm text-slate-600">
+                500gm Packs
+              </Label>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  );
-};
-
-export default FilterMenu
+  )
+}

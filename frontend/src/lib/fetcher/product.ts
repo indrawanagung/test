@@ -1,6 +1,3 @@
-import { Header } from "next/dist/lib/load-custom-routes";
-import { Head } from "next/document";
-
 export interface Product {
   ID: string;
   Name: string;

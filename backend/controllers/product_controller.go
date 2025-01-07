@@ -3,7 +3,7 @@ package controllers
 import "github.com/gofiber/fiber/v2"
 
 type ProductControllerInterface interface {
-	FindAll(ctx *fiber.Ctx) error
+	FindAllProductVariations(ctx *fiber.Ctx) error
 	FindByID(ctx *fiber.Ctx) error
 	AddProductCart(ctx *fiber.Ctx) error
 	FindAllProductCart(ctx *fiber.Ctx) error

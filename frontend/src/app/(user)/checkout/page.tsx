@@ -14,7 +14,7 @@ import Cookies from "js-cookie";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 import { toRupiah } from "@/lib/utils";
-const page = () => {
+const CheckoutPage = () => {
   const router = useRouter()
   const [cartProducts, setCartProducts] = useState<ProductCart[]>();
   const [paymentTypes, setPaymentTypes] = useState<PaymentType[]>();
@@ -97,16 +97,16 @@ const page = () => {
               </div>
               <hr />
               {/* LIST PRODUCT  */}
-              <div className="flex flex-col gap-4">
+              <div className="flex flex-col gap-6">
                 {/* PRODUCT  */}
                 {cartProducts?.map((product) => (
                   <div
                     key={product.ID}
-                    className="flex gap-1 w-full bg-slate-100 rounded-xl"
+                    className="flex gap-1 w-full border shadow-sm rounded-xl"
                   >
                     <div className="p-6 flex justify-between items-center">
                       <Image
-                        className="w-24 h-24 rounded-xl"
+                        className="w-24 h-24 rounded-xl object-cover shadow-lg"
                         src={
                           `${process.env.NEXT_PUBLIC_API_BASE_URL}/images/` +
                           product.VariationOption.Product.Image
@@ -124,7 +124,7 @@ const page = () => {
                         {toRupiah(product.VariationOption.Price)}
                       </span>
                       <div className="flex items-center gap-2">
-                        <span className="text-white bg-blue-500 px-2 py-1 rounded-xl text-sm">
+                        <span className="text-white bg-blue-500 px-2 py-1 rounded-md text-sm">
                           {product.VariationOption.OptionName}
                         </span>
                         <span className="text-base text-gray-500">
@@ -275,4 +275,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default CheckoutPage

@@ -25,7 +25,7 @@ func New(authController controllers.AuthControllerInterface, productController c
 	v1.Post("/auth/login", authController.Login)
 	v1.Post("/auth/register", authController.Register)
 
-	v1.Get("/products", productController.FindAll)
+	v1.Get("/products", productController.FindAllProductVariations)
 	v1.Get("/products/:id", productController.FindByID)
 
 	v1.Post("/carts", authentication, productController.AddProductCart)

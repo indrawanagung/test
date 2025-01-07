@@ -1,7 +1,9 @@
 package repository
 
 import (
+	"fmt"
 	"grabit/model/domain"
+	"strings"
 
 	"github.com/gofiber/fiber/v2/log"
 	"gorm.io/gorm"
@@ -14,19 +16,35 @@ func NewProductRepository() ProductRepositoryInterface {
 	return &ProductRepositoryImpl{}
 }
 
-func (p ProductRepositoryImpl) FindAll(tx *gorm.DB) []domain.Product {
-	var products []domain.Product
-	err := tx.Preload("VariationOptions").
-		Joins("ProductCategory").
-		Preload("VariationOptions.ProductStock").
-		Preload("VariationOptions.Variation").
-		Preload("VariationOptions.ProductVolume.WeightUnit").
-		Find(&products).Error
+func (p ProductRepositoryImpl) FindAllProductVariation(tx *gorm.DB, name string) []domain.VariationOption {
+	//var products []domain.Product
+	//err := tx.Preload("VariationOptions").
+	//	Joins("ProductCategory").
+	//	Preload("VariationOptions.ProductStock").
+	//	Preload("VariationOptions.Variation").
+	//	Preload("VariationOptions.ProductVolume.WeightUnit").
+	//	Find(&products).Error
+	//if err != nil {
+	//	log.Error(err)
+	//	panic(err)
+	//}
+	//return products
+	var productVariations []domain.VariationOption
+	query := tx.Joins("JOIN products ON products.id = variation_options.product_id").
+		Joins("Variation").
+		Joins("ProductVolume.WeightUnit").
+		Preload("Product")
+	fmt.Println("name : ", name)
+	if name != "" && name != "null" {
+		query = query.Where("LOWER(products.name) like ?", "%"+strings.ToLower(name)+"%")
+	}
+
+	err := query.Find(&productVariations).Error
 	if err != nil {
 		log.Error(err)
 		panic(err)
 	}
-	return products
+	return productVariations
 }
 
 func (p ProductRepositoryImpl) FindByID(tx *gorm.DB, id string) (domain.Product, error) {

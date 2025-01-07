@@ -7,7 +7,7 @@ import (
 )
 
 type ProductRepositoryInterface interface {
-	FindAll(tx *gorm.DB) []domain.Product
+	FindAllProductVariation(tx *gorm.DB, name string) []domain.VariationOption
 	FindByID(tx *gorm.DB, id string) (domain.Product, error)
 
 	//cart
